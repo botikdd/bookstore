@@ -61,3 +61,8 @@ def file_uploader():
 		resp = make_response(render_template('file_uploader.html')), 200
 
 	return resp
+
+@app.route("/favicon.ico", methods=["GET"])
+def favicon():
+    return send_from_directory('static', 
+    	'images/icons/favicon.ico', mimetype='image/vnd.microsoft.icon')
