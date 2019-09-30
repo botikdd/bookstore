@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" type="image/ico" href="{{ url_for('static', filename='images/icons/favicon.ico') }}"/>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/util.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+		<title>bookstore - bookstore</title>
+	</head>
+	<body>
+		<div class="topnav">
+			<div class="menu">
+				<a href="{{ url_for('index') }}">Home</a>
+				<a href="{{ url_for('file_uploader') }}">Upload File</a>
+				<a href="{{ url_for('add_book') }}">Add book</a>
+				<a class="active" href="{{ url_for('bookstore') }}">Shoow Books</a>
+			</div>
+		</div>
+		<div class="limiter-table">
+			<table class="table">
+				<thead class="header" id="listHeader">
+					<tr>
+						<th class="col-xs-1">#</th>
+						<th class="col-xs-3">Title</th>
+						<th class="col-xs-5">Author</th>
+					</tr>
+				</thead>
+				<tbody id="allDataBody">
+					{% for book in data %}
+						<tr>
+							<td class="col-xs-1">{{ book.id }}</td>
+							<td class="col-xs-1">{{ book.title }}</td>
+							<td class="col-xs-1">{{ book.author }}</td>
+						<tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</body>
+</html>

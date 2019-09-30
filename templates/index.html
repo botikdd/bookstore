@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" type="image/ico" href="{{ url_for('static', filename='images/icons/favicon.ico') }}"/>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/util.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+		<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+		<script language='javascript' type="text/javascript" src="{{ url_for('static', filename='js/svg.js') }}"></script>
+		<title>bookstore - home</title>
+	</head>
+	<body>
+		<div class="topnav">
+			<div class="menu">
+				<a class="active" href="{{ url_for('index') }}">Home</a>
+				<a href="{{ url_for('file_uploader') }}">Upload File</a>
+				<a href="{{ url_for('add_book') }}">Add book</a>
+				<a href="{{ url_for('bookstore') }}">Shoow Books</a>
+			</div>
+		</div>
+		<div class="limiter">
+			<div class="container-login100">
+			</div>
+		</div>
+	</body>
+</html>
